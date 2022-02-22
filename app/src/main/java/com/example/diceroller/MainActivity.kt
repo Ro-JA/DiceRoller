@@ -17,12 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Find the Button in the layout
-        val rollButton: Button = findViewById(R.id.button)
+        val rollButton: Button = findViewById(R.id.roll_button)
 
         // Set a click listener on the button to roll the dice when the user taps the button
         rollButton.setOnClickListener { rollDice() }
 
-        diceImage = findViewById(R.id.imageView)
+        diceImage = findViewById(R.id.dice_image)
 
     }
 
