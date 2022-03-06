@@ -1,40 +1,30 @@
-package com.example.diceroller
+package com.example.android.diceroller
 
 import android.os.Bundle
-import android.widget.ActionMenuView
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.diceroller.databinding.ActivityMainBinding
-import kotlin.random.Random
+import com.example.diceroller.R
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var diceImage: ImageView
-    lateinit var bindings: ActivityMainBinding
 
-    /**
-     * This method is called when the Activity is created.
-     */
+    lateinit var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Find the Button in the layout
         val rollButton: Button = findViewById(R.id.button)
-
-        // Set a click listener on the button to roll the dice when the user taps the button
-        rollButton.setOnClickListener { rollDice() }
+        rollButton.setOnClickListener {
+            rollDice()
+        }
 
         diceImage = findViewById(R.id.imageView)
-
     }
 
-
-    /**
-     * Roll the dice and update the screen with the result.
-     */
     private fun rollDice() {
-        val randomInt = Random.nextInt(6) + 1
+        val randomInt = Random().nextInt(6) + 1
         val drawableResource = when (randomInt) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
