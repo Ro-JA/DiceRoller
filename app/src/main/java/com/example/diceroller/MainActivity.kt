@@ -1,13 +1,16 @@
 package com.example.diceroller
 
 import android.os.Bundle
+import android.widget.ActionMenuView
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.diceroller.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     lateinit var diceImage: ImageView
+    lateinit var bindings: ActivityMainBinding
 
     /**
      * This method is called when the Activity is created.
@@ -17,12 +20,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Find the Button in the layout
-        val rollButton: Button = findViewById(R.id.roll_button)
+        val rollButton: Button = findViewById(R.id.button)
 
         // Set a click listener on the button to roll the dice when the user taps the button
         rollButton.setOnClickListener { rollDice() }
 
-        diceImage = findViewById(R.id.dice_image)
+        diceImage = findViewById(R.id.imageView)
 
     }
 
